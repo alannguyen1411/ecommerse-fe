@@ -1,0 +1,69 @@
+@import '@styles/variables.module.scss';
+@import '@styles/mixins.module.scss';
+
+.boxSize {
+    @include flex_box_custom(center, center, 10px);
+    position: absolute;
+    bottom: -10px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 100%;
+    min-height: 50px;
+    transform: translateY(-10px);
+    transition: transform 0.5s ease;
+}
+
+.sizes {
+    @include flex_box_custom(center, center, 0px);
+    border: 2px solid #e1e1e1;
+    font-size: 10px;
+    cursor: pointer;
+
+    &:hover {
+        border: 2px solid $primary_color;
+        transition: border 500ms;
+    }
+}
+
+.disabled {
+    position: relative;
+    pointer-events: none;
+    background-color: #eee;
+    color: #aaa;
+    opacity: 0.6;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 1.5px;
+        background-color: rgb(180, 39, 39);
+        transform: rotate(-50deg);
+    }
+}
+
+.isActiveSize {
+    border: 2px solid $primary_color !important;
+}
+
+.boxAddSize {
+    @include flex_box_custom(center, center, 0px);
+
+    .addSize {
+        @include flex_box_custom(center, center, 0px);
+        position: absolute;
+        bottom: 15px;
+        padding: 3px;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        cursor: pointer;
+    }
+}
+
+.boxSizeViewProduct {
+    @include flex_box_custom(unset, center, 10px);
+    font-size: 12px;
+}

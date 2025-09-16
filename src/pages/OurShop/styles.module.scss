@@ -1,0 +1,111 @@
+@import '@styles/mixins.module.scss';
+@import '@styles/variables.module.scss';
+
+.container {
+    padding-top: 83px;
+}
+
+.containerBanner {
+    background: url('https://xstore.8theme.com/elementor2/marseille04/wp-content/uploads/sites/2/2022/12/Background.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 279px;
+    width: 100%;
+    margin-top: 10px;
+
+    .contentBox {
+        @include flex_box_custom(space-between, center, 30px);
+        flex-direction: column;
+        padding: 60px 0;
+
+        .countDownBox {
+            @include flex_box_custom(center, center, 10px);
+            flex-wrap: wrap;
+        }
+
+        .countDownBox > span {
+            border: 1px solid #e1e1e1;
+        }
+
+        .title {
+            font-size: 28px;
+            color: $four_color;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .boxBtn {
+            width: 160px;
+        }
+    }
+
+    @include respond(mobile-tablet) {
+        height: 370px;
+    }
+}
+
+.containerFilter {
+    @include flex_box_custom(space-between, center, 0px);
+
+    margin-top: 15px;
+
+    .boxLeft {
+        @include flex_box_custom(center, center, 20px);
+
+        @include respond(mobile-tablet) {
+            .labelShow {
+                display: none;
+            }
+        }
+    }
+
+    .boxIcon {
+        @include flex_box_custom(center, center, 10px);
+        @include respond(phone) {
+            display: none;
+        }
+    }
+
+    .selectBox {
+        border: 1px solid #e1e1e1;
+        padding: 5px;
+        color: $seconddary_color;
+
+        @include respond(phone) {
+            width: 160px;
+            font-size: 13px;
+
+            &:last-child {
+                width: 70px;
+            }
+        }
+    }
+
+    .selectBox.sort {
+        width: 275px;
+    }
+
+    .selectBox.show {
+        width: 83px;
+    }
+
+    @include respond(mobile-tablet) {
+        padding: 0px 15px;
+    }
+}
+
+.containerProduct {
+    @include flex_box_custom(space-between, flex-start, 10px);
+    flex-wrap: wrap;
+    margin-top: 40px;
+
+    @include respond(mobile-tablet) {
+        margin-top: 20px;
+        padding: 0px 15px;
+    }
+}
+
+.sectionListProduct {
+    min-height: 800px;
+}

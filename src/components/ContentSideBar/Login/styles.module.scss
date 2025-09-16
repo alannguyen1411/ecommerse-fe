@@ -1,0 +1,35 @@
+@import '@styles/variables.module.scss';
+@import '@styles/mixins.module.scss';
+
+.container {
+    padding: 30px 20px;
+
+    .boxRememberMe {
+        margin-bottom: 30px;
+        input {
+            margin-right: 10px;
+        }
+
+        span {
+            font-size: 14px;
+        }
+    }
+
+    .boxBtn {
+        width: 100%;
+
+        button {
+            width: 100%;
+        }
+    }
+
+    .lostPw {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}

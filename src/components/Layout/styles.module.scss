@@ -1,0 +1,14 @@
+@import '@styles/mixins.module.scss';
+
+.wrapLayout {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 1250px;
+
+    @include respond(mobile-tablet) {
+        width: 100%;
+    }
+}

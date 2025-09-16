@@ -1,0 +1,78 @@
+@import '@styles/mixins.module.scss';
+@import '@styles/variables.module.scss';
+
+.container {
+    .title {
+        @include flex_box_custom(flex-start, center, 10px);
+        padding: 9px 15px;
+        color: #404040;
+        font-size: 14px;
+        cursor: pointer;
+
+        &:hover {
+            color: #818181;
+        }
+    }
+
+    .activeTitle {
+        background-color: #f7f7f7;
+    }
+
+    .contentMenu {
+        height: 0px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        padding: 0 20px;
+    }
+
+    .isVisibility {
+        height: auto;
+        padding: 0px 20px 10px 20px;
+    }
+
+    .borderBottom {
+        border-bottom: 1px solid #e1e1e1;
+    }
+}
+
+.aboutUs {
+    @include flex_box_custom(center, center, 0px);
+    flex-direction: column;
+    .title {
+        justify-content: space-between;
+        font-size: 20px;
+        width: 861px;
+        padding: 25px 0px;
+        &:hover {
+            color: unset;
+        }
+
+        @include respond(mobile-tablet) {
+            width: 90%;
+            margin: 0px auto;
+        }
+    }
+
+    .activeTitle {
+        background-color: transparent;
+    }
+
+    .contentMenu {
+        width: 861px;
+        color: $thr_color;
+        line-height: 26px;
+        transition: all 0.5s ease;
+        text-align: justify;
+        padding: 0px;
+
+        @include respond(mobile-tablet) {
+            width: 90%;
+            text-align: unset;
+        }
+    }
+
+    .isVisibility {
+        height: auto;
+        padding: 25px 0px;
+    }
+}

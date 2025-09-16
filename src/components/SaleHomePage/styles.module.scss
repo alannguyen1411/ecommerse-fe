@@ -1,0 +1,70 @@
+@import '@styles/mixins.module.scss';
+@import '@styles/variables.module.scss';
+
+.container {
+    @include flex_box_custom(space-between, center, 0px);
+
+    margin-top: 100px;
+
+    .boxContent {
+        @include flex_box_custom(center, center, 0px);
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 35px;
+        color: $four_color;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .des {
+        font-size: 16px;
+        color: $thr_color;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .boxBtn {
+        margin-top: 20px;
+    }
+
+    .boxImage {
+        @include flex_box_custom(center, center, 0px);
+
+        width: 100%;
+        img {
+            width: 400px;
+        }
+        @include respond(mobile-tablet) {
+            transform: none !important;
+            transition: none !important;
+        }
+
+        @include respond(phone) {
+            padding: 0 10px;
+            img {
+                width: 100%;
+            }
+        }
+
+        @include respond(tablet) {
+            img {
+                width: 550px;
+            }
+        }
+    }
+
+    .responsive {
+        @include respond(mobile-tablet) {
+            display: none;
+        }
+    }
+
+    @include respond(mobile-tablet) {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+}

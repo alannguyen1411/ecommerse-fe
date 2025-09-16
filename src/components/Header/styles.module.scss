@@ -1,0 +1,168 @@
+@import '@styles/mixins.module.scss';
+@import '@styles/variables.module.scss';
+
+.container {
+    @include flex_box_custom(center, center, 0px);
+    background-color: transparent;
+    left: 0;
+    right: 0;
+}
+
+.topHeader {
+    position: absolute;
+    top: 0;
+}
+
+.fixedHeader {
+    position: fixed;
+    top: -83px;
+    background-color: #ffffffe6;
+    box-shadow: 2px 0px 12px 0px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+    z-index: 998;
+    transform: translateY(83px);
+    transition: transform 0.7s ease;
+
+    @include respond(mobile-tablet) {
+        top: -64px;
+        transform: translateY(64px);
+    }
+}
+
+.containerHeader {
+    width: 1250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 83px;
+
+    .elementer {
+        display: none;
+    }
+
+    @include respond(mobile-tablet) {
+        width: 100%;
+        height: 64px;
+        padding: 0 15px;
+        .logo img {
+            width: 60px !important;
+            height: 60px !important;
+        }
+
+        .elementer {
+            display: flex;
+            cursor: pointer;
+        }
+    }
+}
+
+.containerBoxIcon {
+    @include flex_box_custom(center, center, 20px);
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.containerBox {
+    @include flex_box_custom(center, center, 30px);
+
+    @include respond(mobile-tablet) {
+        display: none;
+
+        &:last-child {
+            display: flex;
+        }
+    }
+}
+
+.containerMenu {
+    @include flex_box_custom(center, center, 20px);
+
+    @include respond(mobile-tablet) {
+        display: none;
+
+        &:last-child {
+            display: flex;
+        }
+    }
+}
+
+.boxIcon {
+    @include radius_common(50%);
+    @include flex_box_custom(center, center, 0px);
+    background-color: $primary_color;
+    width: 26px;
+    height: 26px;
+}
+
+.menu {
+    cursor: pointer;
+    padding-top: 9px;
+    font-size: 15px;
+    color: $primary_color;
+    position: relative;
+
+    .boxUser {
+        @include flex_box_custom(center, center, 5px);
+    }
+
+    .subMenu {
+        position: absolute;
+        background-color: #fff;
+        width: 200px;
+        top: 40px;
+        z-index: 1;
+
+        .itemMenu {
+            padding: 10px;
+        }
+
+        .itemMenu:hover {
+            background-color: $line_color;
+        }
+    }
+}
+
+.menu::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin-top: 6px;
+    background-color: $primary_color;
+    transform-origin: right;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 300ms, opacity 500ms;
+}
+
+.menu:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.boxCart {
+    position: relative;
+
+    .quantity {
+        position: absolute;
+        top: -5px;
+        right: -10px;
+        background-color: $primary_color;
+        color: #fff;
+        @include radius_common(50%);
+        width: 15px;
+        height: 15px;
+        @include flex_box_custom(center, center, 0px);
+        font-size: 10px;
+    }
+
+    @include respond(mobile-tablet) {
+        display: none;
+
+        &:last-child {
+            display: flex;
+        }
+    }
+}

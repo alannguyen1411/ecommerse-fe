@@ -1,0 +1,43 @@
+.slick-slider:hover .slick-arrow {
+    color: #333;
+    width: 25px;
+    height: 25px;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.slick-slider:hover .slick-prev {
+    left: 10px;
+}
+
+.slick-slider:hover .slick-next {
+    right: 10px;
+}
+
+.slick-prev {
+    left: 0px;
+    z-index: 999;
+}
+
+.slick-next {
+    right: 0px;
+    z-index: 999;
+}
+
+.boxItem {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 64em) {
+    .slick-slider:hover .slick-prev,
+    .slick-prev {
+        display: none;
+    }
+
+    .slick-slider:hover .slick-prev,
+    .slick-next {
+        display: none;
+    }
+}

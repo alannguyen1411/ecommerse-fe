@@ -1,0 +1,36 @@
+@import '@styles/mixins.module.scss';
+
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    border-radius: 10px;
+    background: #fff;
+
+    .title {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #222;
+    }
+
+    .desc {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        margin-top: 15px;
+    }
+
+    .btnResend {
+        @include flex_box_custom(flex-end, center, 0px);
+
+        margin: 10px 20px 0px 10px;
+
+        button {
+            width: 40%;
+        }
+    }
+}

@@ -1,0 +1,59 @@
+@import '@styles/variables.module.scss';
+@import '@styles/mixins.module.scss';
+
+.container {
+    @include flex_box_custom(center, center, 20px);
+    flex-direction: column;
+
+    background-color: #363636;
+    margin-top: 80px;
+    color: $white_color;
+    padding: 40px 0;
+
+    .boxNav {
+        @include flex_box_custom(center, center, 40px);
+
+        font-size: 15px;
+
+        :hover {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        @include respond(phone) {
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+    }
+
+    .boxImgMethods {
+        @include flex_box_custom(center, center, 10px);
+    }
+
+    .imgMethods {
+        max-width: 50%;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+    @include respond(phone) {
+        .logo {
+            width: 80px;
+            height: 80px;
+        }
+
+        .payments {
+            width: 100%;
+        }
+
+        .copyRight {
+            width: 100%;
+            padding: 0px 10px;
+        }
+    }
+
+    @include respond(mobile-tablet) {
+        margin-top: 20px;
+    }
+}

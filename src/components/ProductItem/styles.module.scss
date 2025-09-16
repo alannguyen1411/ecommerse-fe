@@ -1,0 +1,291 @@
+@import '@styles/variables.module.scss';
+@import '@styles/mixins.module.scss';
+
+.container {
+    @include respond(phone) {
+        @include flex_box_custom(center, center, 0px);
+        width: 48%;
+        flex-wrap: wrap;
+    }
+
+    @include respond(tablet) {
+        @include flex_box_custom(center, center, 0px);
+        width: 200px;
+        flex-direction: column;
+    }
+}
+
+.boxImg {
+    width: 300px;
+    height: 100%;
+    position: relative;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .showImgWhenHover {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: opacity 200ms;
+    }
+
+    &:hover .showImgWhenHover {
+        opacity: 1;
+        transition: opacity 500ms;
+    }
+
+    .showFncWhenHover {
+        position: absolute;
+        opacity: 0;
+        bottom: 20px;
+        right: 0px;
+        background-color: $white_color;
+        transition: opacity 200ms, right 200ms;
+        @include respond(phone) {
+            bottom: 5px;
+            .hideOnMobile {
+                display: none;
+            }
+        }
+    }
+
+    .locationShowFnc {
+        bottom: 20% !important;
+    }
+
+    &:hover .showFncWhenHover {
+        opacity: 1;
+        right: 20px;
+        transition: opacity 500ms, right 300ms;
+
+        @include respond(phone) {
+            right: 5px;
+        }
+    }
+
+    .boxIcon {
+        @include flex_box_custom(center, center, 0px);
+
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        cursor: pointer;
+        &:hover {
+            background-color: $background_color;
+            transition: background-color 500ms;
+        }
+
+        @include respond(phone) {
+            width: 35px;
+            height: 35px;
+            font-size: 16px;
+        }
+    }
+
+    @include respond(mobile-tablet) {
+        width: 100%;
+    }
+}
+
+.title {
+    font-size: 16px;
+    color: $four_color;
+    margin: 6px 0px;
+}
+
+.price {
+    font-size: 14px;
+    color: $thr_color;
+    font-weight: 400;
+}
+
+.boxColor {
+    @include flex_box_custom(center, center, 10px);
+    height: 35px;
+}
+.colors {
+    width: 35px;
+    height: 24px;
+    box-sizing: border-box;
+    &:hover {
+        transform: scale(1.4);
+        border: thick double #fff;
+
+        cursor: pointer;
+    }
+}
+
+.disabled {
+    position: relative;
+    pointer-events: none;
+    background-color: #eee;
+    color: #aaa;
+    opacity: 0.6;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 1.5px;
+        background-color: rgb(180, 39, 39);
+        transform: rotate(-30deg);
+    }
+}
+
+.isActiveColor {
+    transform: scale(1.4);
+
+    border: thick double #fff;
+}
+
+.btnClear {
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.boxBtn {
+    width: 175px;
+    margin: 10px auto;
+}
+
+.boxContent {
+    width: 100%;
+}
+
+.containerItem {
+    @include flex_box_custom(flex-start, center, 20px);
+    margin-top: 10px;
+    cursor: pointer;
+
+    .content {
+        @include flex_box_custom(flex-start, flex-start, 10px);
+        flex-direction: column;
+    }
+
+    .leftBtn {
+        margin: 0px;
+    }
+
+    .largImg {
+        width: 430px;
+    }
+}
+
+.containerViewItem {
+    height: 100%;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    box-sizing: border-box;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    .title {
+        font-size: 24px;
+        color: $four_color;
+        margin-top: 20px;
+    }
+
+    .price {
+        font-size: 20px;
+        margin: 10px 0;
+        font-weight: 400;
+    }
+
+    .des {
+        color: $thr_color;
+        font-weight: 400;
+    }
+
+    .boxColorViewProduct {
+        @include flex_box_custom(unset, center, 10px);
+        font-size: 12px;
+    }
+
+    .labelSize,
+    .labelColor {
+        margin-top: 10px;
+        font-size: 14px;
+        color: $thr_color;
+        margin-bottom: 7px;
+    }
+
+    .labelQty {
+        margin-top: 15px;
+        font-size: 14px;
+        color: $thr_color;
+        margin-bottom: 7px;
+    }
+
+    .boxAddToCart {
+        @include flex_box_custom(flex-start, center, 20px);
+
+        margin-top: 15px;
+    }
+
+    .boxOr {
+        @include flex_box_custom(center, center, 10px);
+        font-size: 12px;
+        color: $thr_color;
+        margin: 15px 0px;
+        .line {
+            width: 100%;
+            height: 1px;
+            background-color: #e1e1e1;
+            flex-grow: 1;
+        }
+    }
+    .boxAddOther {
+        @include flex_box_custom(flex-start, center, 10px);
+        color: $four_color;
+        margin-top: 15px;
+        cursor: pointer;
+
+        :hover {
+            color: $thr_color;
+        }
+    }
+
+    .boxFooter {
+        @include flex_box_custom(flex-start, center, 10px);
+
+        margin: 12px 0px;
+        align-items: center;
+        .iconFooter {
+            @include flex_box_custom(flex-start, center, 10px);
+            i {
+                @include flex_box_custom(center, center, 10px);
+                cursor: pointer;
+
+                :hover {
+                    color: $thr_color;
+                }
+            }
+        }
+        span {
+            color: $seconddary_color;
+        }
+    }
+}
+
+.containerRelatedProducts {
+    @include flex_box_custom(center, center, 0px);
+
+    flex-direction: column;
+    width: 100%;
+}
